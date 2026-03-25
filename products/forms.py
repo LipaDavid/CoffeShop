@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django import forms
 from .models import Product
 
@@ -14,5 +15,5 @@ class ProductForm(forms.Form):
             description=self.cleaned_data['description'],
             price=self.cleaned_data['price'],
             available=self.cleaned_data['available'],
-            photo=self.cleaned_data['photo'],
+            photo=self.cleaned_data['photo']
         )
