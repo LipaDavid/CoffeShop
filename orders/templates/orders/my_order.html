@@ -6,4 +6,10 @@ Acá aparecerá la orden
 {{order.user.username}}
 {{order.order_date|date}}
 
+{% for product_order in order.orderproduct_set.all %}
+    {{ product_order.product.name }}
+    {{ product_order.product.price}}
+{% empty %}
+    <p>No hay items en tu orden.</p>
+{% endfor %}
 {% endblock content %}
